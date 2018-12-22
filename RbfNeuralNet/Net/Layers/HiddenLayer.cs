@@ -10,11 +10,8 @@ namespace RbfNeuralNet.Net.Layers
     public class HiddenLayer
     {
         private Neuron[] Neurons;
-        public int NeuronsCount
-        {
-            get; private set;
-        }
-        private double[] Weights
+        public int NeuronsCount => Neurons.Count();
+        public double[] Weights
         {
             get
             {
@@ -24,7 +21,6 @@ namespace RbfNeuralNet.Net.Layers
 
         public HiddenLayer(int neuronsCount, ActivationFunction function)
         {
-            NeuronsCount = neuronsCount;
             Neurons = Neuron.CreateNeurons(neuronsCount, function);
         }
 
@@ -32,29 +28,11 @@ namespace RbfNeuralNet.Net.Layers
         {
             if (x.Length == NeuronsCount)
             {
-                double[] result = new double[NeuronsCount];
+                var result = new double[NeuronsCount];
 
                 for (int i = 0; i < NeuronsCount; i++)
                 {
                     result[i] = Neurons[i].GetValue(x[i]);
-                }
-                return result;
-            }
-            else
-            {
-                throw new Exception();
-            }
-        }
-
-        public double[] ApplyWeights(double[] x)
-        {
-            if (x.Length == NeuronsCount)
-            {
-                double[] result = new double[NeuronsCount];
-
-                for (int i = 0; i < NeuronsCount; i++)
-                {
-                    result[i] = Neurons[i].Weight * x[i];
                 }
                 return result;
             }

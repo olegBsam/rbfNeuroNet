@@ -20,11 +20,11 @@ namespace RbfNeuralNet
         public double[] hLOutput;
 
         public double[] oLInput;
-        public double[] oLOutput;
+        public double oLOutput;
 
         public NeuralNet(int inputLayerSize, int hiddenLayerSize, ActivationFunction function)
         {
-            inputLayer = new LinearInputLayer(inputLayerSize);
+            inputLayer = new InputLayer(inputLayerSize);
             hiddenLayer = new HiddenLayer(hiddenLayerSize, function);
             outputLayer = new OutputLayer();
         }
@@ -34,11 +34,32 @@ namespace RbfNeuralNet
             double result = 0.0;
 
             iLInput = x;
-            iLOutput = inputLayer.CalcLinerOutput(hiddenLayer.NeuronsCount);
-            hLInput = hiddenLayer.Calculate(iLOutput);
-            result = outputLayer.Calculate(hiddenLayerOutput);
+            iLOutput = inputLayer.Calculate(iLInput);
+
+            hLInput = Link1(iLOutput);
+            hLOutput = hiddenLayer.Calculate(hLInput);
+
+            oLInput = Link2(hLOutput);
+            oLOutput = outputLayer.Calculate(oLInput);
 
             return result;
         }
+
+        private double[] Link2(double[] hLOutput)
+        {
+            double[] result = new double[hiddenLayer.NeuronsCount];
+            for (int i = 0; i < hiddenLayer.NeuronsCount; i++)
+            {
+                result[i] = hLOutput[i] * hiddenLayer.Weights[i];
+            }
+            return result;
+        }
+
+        private double[] Link1(double[] x)
+        {
+            return x;
+        }
+
+
     }
 }
