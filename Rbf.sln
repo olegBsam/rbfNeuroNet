@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28010.2036
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rbf", "Rbf\Rbf.csproj", "{A9CAC11D-77E6-4DD7-9C56-D93C4E89F16B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RbfNeuralNet", "RbfNeuralNet\RbfNeuralNet.csproj", "{A3D284CB-6684-41DD-BC2B-A2E83040239F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A9CAC11D-77E6-4DD7-9C56-D93C4E89F16B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A9CAC11D-77E6-4DD7-9C56-D93C4E89F16B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A9CAC11D-77E6-4DD7-9C56-D93C4E89F16B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A9CAC11D-77E6-4DD7-9C56-D93C4E89F16B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A3D284CB-6684-41DD-BC2B-A2E83040239F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A3D284CB-6684-41DD-BC2B-A2E83040239F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A3D284CB-6684-41DD-BC2B-A2E83040239F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A3D284CB-6684-41DD-BC2B-A2E83040239F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {55A563C8-9BF3-49F1-866E-AEED41B3B51F}
+	EndGlobalSection
+EndGlobal
